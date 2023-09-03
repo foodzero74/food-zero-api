@@ -5,6 +5,10 @@ const CategorySchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  disabled: {
+    type: Boolean,
+    default: false
+  },
   description: {
     type: String,
     required: true
@@ -19,6 +23,6 @@ const CategorySchema = new mongoose.Schema({
       ref: 'Product'
     }
   ]
-});
+}, { collection: 'categories' });
 
 export const CategoryModel = mongoose.model('Category', CategorySchema);

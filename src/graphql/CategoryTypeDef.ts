@@ -4,9 +4,18 @@ export const CategoryTypeDef = gql`
   type Category {
     id: ID!
     name: String!
+    description: String!
+    image: String!
+    disabled: Boolean
+    products: [Product]
+  }
+
+  input UpdateCategoryInput {
+    id: ID!
+    name: String
     description: String
     image: String
-    products: [Product]
+    disabled: Boolean
   }
 
   input CategoryInput {
@@ -22,5 +31,6 @@ export const CategoryTypeDef = gql`
 
   extend type Mutation {
     createCategory(input: CategoryInput!): Category!
+    updateCategory(input: UpdateCategoryInput!): Category!
   }
 `;

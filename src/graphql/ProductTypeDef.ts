@@ -9,15 +9,27 @@ export const ProductTypeDef = gql`
     image: String
     priority: Int!
     categories: [Category]
+    disabled: Boolean!
   }
 
   input CreateProductInput {
     name: String!
-    description: String
+    description: String!
     price: Float!
-    image: String
+    image: String!
     priority: Int!
     categories: [ID!]!
+  }
+
+  input UpdateProductInput {
+    id: ID!
+    name: String
+    description: String
+    price: Float
+    image: String
+    priority: Int
+    categories: [ID!]
+    disabled: Boolean
   }
 
   extend type Query {
@@ -27,5 +39,6 @@ export const ProductTypeDef = gql`
 
   extend type Mutation {
     createProduct(input: CreateProductInput!): Product!
+    updateProduct(input: UpdateProductInput!): Product!
   }
 `;

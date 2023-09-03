@@ -4,7 +4,7 @@ import { Document } from 'mongoose';
 
 export type CreateCategoryInput = {
     name: String;
-    description: String; 
+    description: String;
     image: String;
 };
 
@@ -14,23 +14,35 @@ export interface CreateProductInput {
     price: number;
     image: string;
     priority: number;
-    categories: string[];  // Array of Category IDs
-  }
+    categories: string[];
+}
 
+export interface UpdateCategoryInput {
+    id: string;
+    name?: string;
+    description?: string;
+    image?: string;
+    disabled?: boolean;
+}
+
+export interface UpdateProductInput {
+    id: string; 
+    name?: string; 
+    description?: string;
+    price?: number;
+    image?: string;
+    priority?: number;
+    categories?: string[]; 
+    disabled?: boolean;
+  }
+  
 
 export type User = {
     uid: string;
 };
 
-// Define the GraphQL context type
 export type GraphQLContext = {
     req: Request;
-    user?: User; // User might be undefined if not authenticated
+    user?: User;
 };
 
-
-type ProductDocument = Document & typeof ProductModel.prototype;
-type CategoryDocument = Document & typeof CategoryModel.prototype;
-
-export interface ProductType extends ProductDocument {}
-export interface Category extends CategoryDocument {}
