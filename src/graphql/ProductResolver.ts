@@ -11,8 +11,8 @@ export const ProductResolver = {
     categories: async () => {
       return await Category.find({});
     },
-    categoryById: async (_: any, { id }: { id: string }) => {
-      return await Category.findById(id);
+    categoryById: async (_: any, { categoryId }: { categoryId: string }) => {
+      return await Category.findById(categoryId);
     },
 
     productsByCategoryId: async (_: any, { categoryId }: { categoryId: string }) => {

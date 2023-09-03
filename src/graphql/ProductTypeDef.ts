@@ -21,7 +21,7 @@ export const ProductTypeDef = gql`
   extend type Query {
     products: [Product!]
     categories: [Category!]
-    categoryById(id: ID!): Category
+    categoryById(categoryId: ID!): Category
     productsByCategoryId(categoryId: ID!): [Product!]
   }
 
