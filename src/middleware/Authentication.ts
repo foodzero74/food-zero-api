@@ -9,8 +9,7 @@ async function getUserFromToken(token: string): Promise<admin.auth.DecodedIdToke
     const decodedToken = await admin.auth().verifyIdToken(token);
     return decodedToken;
   } catch (error) {
-    console.error('Error verifying token:', error);
-    throw new AuthenticationError('You must be logged in!');
+    throw new AuthenticationError('Invalid token');
   }
 }
 

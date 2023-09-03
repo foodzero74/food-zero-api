@@ -4,6 +4,8 @@ export const ProductTypeDef = gql`
   type Category {
     id: ID!
     name: String!
+    description: String!
+    image: String!
   }
 
   type Product {
@@ -19,5 +21,15 @@ export const ProductTypeDef = gql`
   extend type Query {
     products: [Product!]
     categories: [Category!]
+  }
+
+  input CategoryInput {
+    name: String!
+    description: String!
+    image: String!
+  }
+
+  extend type Mutation {
+    createCategory(input: CategoryInput!): Category!
   }
 `;
