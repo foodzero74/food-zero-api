@@ -1,11 +1,15 @@
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
-
-import typeDefs from './graphql/typeDefs';
-import resolvers from './graphql/resolvers';
+import { connectToDb } from './config/database';
+import { ProductTypeDef } from './graphql/ProductTypeDef';
 import getUserFromToken from './middleware/Authentication';
+import { ProductResolver } from './graphql/ProductResolver';
+import { RootTypeDef } from './graphql/rootTypeDef';
 
 const app = express();
+connectToDb();
+const typeDefs = [RootTypeDef, ProductTypeDef];
+const resolvers = [ProductResolver];
 
 const server = new ApolloServer({
   typeDefs,
@@ -17,8 +21,12 @@ const server = new ApolloServer({
   }
 });
 
-server.applyMiddleware({ app });
+const startApolloServer = async () => {
+  await server.start();
+  server.applyMiddleware({ app });
+  app.listen({ port: 4000 }, () => {
+    console.log(`Server ready at http://localhost:4000${server.graphqlPath}`);
+  });
+}
 
-app.listen({ port: 4000 }, () =>
-  console.log(`Server ready at http://localhost:4000${server.graphqlPath}`)
-);
+startApolloServer();
