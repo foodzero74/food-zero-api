@@ -1,15 +1,13 @@
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { connectToDb } from './config/database';
-import { ProductTypeDef } from './graphql/ProductTypeDef';
 import getUserFromToken from './middleware/Authentication';
-import { ProductResolver } from './graphql/ProductResolver';
-import { RootTypeDef } from './graphql/rootTypeDef';
+import { CategoryResolver, CategoryTypeDef, ProductResolver, ProductTypeDef, RootTypeDef } from './graphql';
 
 const app = express();
 connectToDb();
-const typeDefs = [RootTypeDef, ProductTypeDef];
-const resolvers = [ProductResolver];
+const typeDefs = [RootTypeDef, ProductTypeDef, CategoryTypeDef];
+const resolvers = [ProductResolver, CategoryResolver];
 
 const server = new ApolloServer({
   typeDefs,
