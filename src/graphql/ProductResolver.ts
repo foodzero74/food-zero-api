@@ -61,24 +61,17 @@ export const ProductResolver = {
       if (input.priority) product.priority = input.priority;
       if (input.categories) {
         const oldCategories = product.categories;
-        for (const oldCatId of oldCategories) {
-          const oldCategory = await CategoryModel.findById(oldCatId);
-          if (oldCategory) {
-            oldCategory.products = oldCategory.products.filter(
-              prodId => !prodId.equals(product._id)
-            );
-            await oldCategory.save();
-          }
-        }
-        product.categories = [];
-        for (const newCatId of input.categories) {
-          const newCategory = await CategoryModel.findById(newCatId);
-          if (newCategory && !newCategory.products.includes(product._id)) {
-            newCategory.products.push(product._id);
-            await newCategory.save();
-          }
-          product.categories.push(new mongoose.Types.ObjectId(newCatId));
-        }
+        // Remove product ID from old categories
+        await CategoryModel.updateMany(
+          { _id: { $in: oldCategories } },
+          { $pull: { products: product._id } }
+        );
+        // Add product ID to new categories
+        await CategoryModel.updateMany(
+          { _id: { $in: input.categories } },
+          { $addToSet: { products: product._id } }
+        );
+        product.categories = input.categories.map(id => new mongoose.Types.ObjectId(id));
       }
       if (typeof input.disabled !== 'undefined') product.disabled = input.disabled;
 
