@@ -21,6 +21,8 @@ export const ProductTypeDef = gql`
   extend type Query {
     products: [Product!]
     categories: [Category!]
+    categoryById(id: ID!): Category
+    productsByCategoryId(categoryId: ID!): [Product!]
   }
 
   input CategoryInput {
