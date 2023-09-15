@@ -1,8 +1,7 @@
-import { AuthenticationError } from 'apollo-server-express';
 import { CategoryModel } from "../models/Category";
 import { CreateCategoryInput, GraphQLContext, UpdateCategoryInput } from '../types';
 import { ProductModel } from '../models';
-import mongoose from 'mongoose';
+import AuthError from "../Utils/AuthError";
 
 export const CategoryResolver = {
     Query: {
@@ -24,7 +23,7 @@ export const CategoryResolver = {
             context: GraphQLContext
         ) => {
             if (!context.user) {
-                throw new AuthenticationError('You must be logged in to create a category.');
+                AuthError.throw('You must be logged in to create a category.');
             }
 
             const category = new CategoryModel(input);
@@ -36,7 +35,7 @@ export const CategoryResolver = {
             context: GraphQLContext
         ) => {
             if (!context.user) {
-                throw new AuthenticationError('You must be logged in to update a category.');
+                AuthError.throw('You must be logged in to update a category.');
             }
 
             const category = await CategoryModel.findById(input.id);
