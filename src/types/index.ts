@@ -1,6 +1,4 @@
-import { ProductModel, CategoryModel } from '../models';
 import { Request } from 'express';
-import { Document } from 'mongoose';
 
 export type CreateCategoryInput = {
     name: String;

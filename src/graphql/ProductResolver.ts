@@ -1,4 +1,4 @@
-import { AuthenticationError } from 'apollo-server-express';
+import AuthError from '../Utils/AuthError';
 import { CategoryModel, ProductModel } from '../models';
 import { CreateProductInput, GraphQLContext, UpdateProductInput } from '../types';
 import mongoose from 'mongoose';
@@ -23,7 +23,7 @@ export const ProductResolver = {
       context: GraphQLContext
     ) => {
       if (!context.user) {
-        throw new AuthenticationError('You must be logged in to create a product.');
+        AuthError.throw('You must be logged in to create a product.');
       }
 
       const product = new ProductModel(input);
@@ -46,7 +46,7 @@ export const ProductResolver = {
       context: GraphQLContext
     ) => {
       if (!context.user) {
-        throw new AuthenticationError('You must be logged in to update a product.');
+        AuthError.throw('You must be logged in to update a product.');
       }
 
       const product = await ProductModel.findById(input.id);

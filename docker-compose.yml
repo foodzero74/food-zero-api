@@ -1,0 +1,23 @@
+version: '3'
+services:
+  # Development Service
+  development:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - '4000:4000'  # Map the container's port to your local machine
+    volumes:
+      - 'C:\Users\cris\Documents\postgrado\api:/app'      # Mount the local source code into the container
+    environment:
+      NODE_ENV: development
+
+  # Production Service (you can deploy this to a production server)
+  production:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '4000:4000'  # Map the container's port to your local machine or server
+    environment:
+      NODE_ENV: production

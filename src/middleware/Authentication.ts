@@ -1,5 +1,5 @@
+import AuthError from '../Utils/AuthError';
 import admin from '../config/firebaseAdmin';
-import { AuthenticationError } from 'apollo-server-express';
 
 async function getUserFromToken(token: string): Promise<admin.auth.DecodedIdToken | null> {
   try {
@@ -9,7 +9,7 @@ async function getUserFromToken(token: string): Promise<admin.auth.DecodedIdToke
     const decodedToken = await admin.auth().verifyIdToken(token);
     return decodedToken;
   } catch (error) {
-    throw new AuthenticationError('Invalid token');
+    throw AuthError.throw('Invalid token');
   }
 }
 

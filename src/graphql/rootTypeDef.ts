@@ -1,5 +1,4 @@
-// rootTypeDef.ts
-import { gql } from 'apollo-server-express';
+import gql from 'graphql-tag';
 
 export const RootTypeDef = gql`
   type Query {
