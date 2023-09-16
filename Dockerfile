@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install -g pnpm typescript
+RUN npm install -g typescript
 
 RUN rm -rf node_modules
 RUN rm -rf dist
