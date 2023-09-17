@@ -1,4 +1,4 @@
-import AuthError from '../../utils/AuthError';
+import AuthError from '../../Utils/AuthError';
 import { ScheduleModel } from '../../models';
 
 import { CreateScheduleInput, ErrorType, GraphQLContext, UpdateScheduleInput } from '../../types';

@@ -1,6 +1,6 @@
 import { StaffModel } from '../../models';
 import { CreateStaffInput, UpdateStaffInput, GraphQLContext, ErrorType } from '../../types';
-import AuthError from '../../utils/AuthError';
+import AuthError from '../../Utils/AuthError';
 
 export const StaffResolver = {
     Query: {
