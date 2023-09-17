@@ -1,5 +1,5 @@
 import { CategoryModel } from "../models/Category";
-import { CreateCategoryInput, GraphQLContext, UpdateCategoryInput } from '../types';
+import { CreateCategoryInput, ErrorType, GraphQLContext, UpdateCategoryInput } from '../types';
 import { ProductModel } from '../models';
 import AuthError from "../Utils/AuthError";
 
@@ -23,7 +23,7 @@ export const CategoryResolver = {
             context: GraphQLContext
         ) => {
             if (!context.user) {
-                AuthError.throw('You must be logged in to create a category.');
+                AuthError.throw(ErrorType.CREATE_CATEGORY);
             }
 
             const category = new CategoryModel(input);
@@ -35,12 +35,12 @@ export const CategoryResolver = {
             context: GraphQLContext
         ) => {
             if (!context.user) {
-                AuthError.throw('You must be logged in to update a category.');
+                AuthError.throw(ErrorType.UPDATE_CATEGORY);
             }
 
             const category = await CategoryModel.findById(input.id);
             if (!category) {
-                throw new Error("Category not found");
+                throw new Error(ErrorType.NOT_FOUND_CATEGORY);
             }
 
             if (input.name) category.name = input.name;
