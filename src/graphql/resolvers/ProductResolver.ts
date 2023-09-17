@@ -1,4 +1,4 @@
-import AuthError from '../../utils/AuthError';
+import AuthError from '../../Utils/AuthError';
 import { CategoryModel, ProductModel } from '../../models';
 import { CreateProductInput, ErrorType, GraphQLContext, UpdateProductInput } from '../../types';
 import mongoose from 'mongoose';

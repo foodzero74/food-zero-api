@@ -1,4 +1,4 @@
-import AuthError from '../utils/AuthError';
+import AuthError from '../Utils/AuthError';
 import admin from '../config/firebaseAdmin';
 import { ErrorType } from '../types';
 
