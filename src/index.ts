@@ -12,7 +12,9 @@ import {
   ProductTypeDef,
   RootTypeDef,
   ScheduleResolver,
-  ScheduleTypeDef
+  ScheduleTypeDef,
+  StaffTypeDef,
+  StaffResolver
 } from './graphql';
 
 interface GraphqlContext {
@@ -20,8 +22,8 @@ interface GraphqlContext {
 }
 const app = express();
 connectToDb();
-const typeDefs = [RootTypeDef, ProductTypeDef, CategoryTypeDef, ScheduleTypeDef];
-const resolvers = [ProductResolver, CategoryResolver, ScheduleResolver];
+const typeDefs = [RootTypeDef, ProductTypeDef, CategoryTypeDef, ScheduleTypeDef, StaffTypeDef];
+const resolvers = [ProductResolver, CategoryResolver, ScheduleResolver, StaffResolver];
 
 const server = new ApolloServer<GraphqlContext>({
   typeDefs,

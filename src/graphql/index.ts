@@ -5,3 +5,5 @@ export * from './CategoryTypeDef';
 export * from './rootTypeDef';
 export * from './ScheduleTypeDef';
 export * from './ScheduleResolver';
+export * from './StaffTypeDef';
+export * from './StaffResolver';

@@ -1,11 +1,12 @@
-import AuthError from '../Utils/AuthError';
-import { ScheduleModel } from '../models/Schedule';
+import AuthError from '../utils/AuthError';
+import { ScheduleModel } from '../models';
+
 import { CreateScheduleInput, ErrorType, GraphQLContext, UpdateScheduleInput } from '../types';
 
 export const ScheduleResolver = {
     Query: {
         schedules: async () => {
-            return ScheduleModel.find({}).sort({ openTime: 1 });
+            return await ScheduleModel.find({}).sort({ openTime: 1 });
         },
     },
     Mutation: {
