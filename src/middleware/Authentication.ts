@@ -1,5 +1,6 @@
 import AuthError from '../Utils/AuthError';
 import admin from '../config/firebaseAdmin';
+import { ErrorType } from '../types';
 
 async function getUserFromToken(token: string): Promise<admin.auth.DecodedIdToken | null> {
   try {
@@ -9,7 +10,7 @@ async function getUserFromToken(token: string): Promise<admin.auth.DecodedIdToke
     const decodedToken = await admin.auth().verifyIdToken(token);
     return decodedToken;
   } catch (error) {
-    throw AuthError.throw('Invalid token');
+    throw AuthError.throw(ErrorType.INVALID_TOKEN);
   }
 }
 

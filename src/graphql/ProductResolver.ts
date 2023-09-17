@@ -1,6 +1,6 @@
 import AuthError from '../Utils/AuthError';
 import { CategoryModel, ProductModel } from '../models';
-import { CreateProductInput, GraphQLContext, UpdateProductInput } from '../types';
+import { CreateProductInput, ErrorType, GraphQLContext, UpdateProductInput } from '../types';
 import mongoose from 'mongoose';
 
 export const ProductResolver = {
@@ -23,7 +23,7 @@ export const ProductResolver = {
       context: GraphQLContext
     ) => {
       if (!context.user) {
-        AuthError.throw('You must be logged in to create a product.');
+        AuthError.throw(ErrorType.CREATE_PRODUCT);
       }
 
       const product = new ProductModel(input);
@@ -46,12 +46,12 @@ export const ProductResolver = {
       context: GraphQLContext
     ) => {
       if (!context.user) {
-        AuthError.throw('You must be logged in to update a product.');
+        AuthError.throw(ErrorType.UPDATE_PRODUCT);
       }
 
       const product = await ProductModel.findById(input.id);
       if (!product) {
-        throw new Error("Product not found");
+        throw new Error(ErrorType.NOT_FOUND_PRODUCT);
       }
 
       if (input.name) product.name = input.name;
