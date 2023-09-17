@@ -13,7 +13,30 @@ export enum ErrorType {
     NOT_FOUND_SCHEDULE = 'Schedule not found.',
     INVALID_TOKEN = 'Invalid token.',
     OVERLAP_SCHEDULE = 'Schedule overlaps with an existing schedule.',
+    NOT_FOUND_STAFF = 'Staff not found.',
+    CREATE_STAFF = 'You must be logged in to create a staff member.',
+    UPDATE_STAFF = 'You must be logged in to update a staff member.',
+    DELETE_STAFF = 'You must be logged in to delete a staff member.',
+    UNDELETE_STAFF = 'You must be logged in to activate a staff member.',
 }
+
+export interface CreateStaffInput {
+    name: string;
+    description: string;
+    image: string;
+    role: string;
+    disabled?: boolean;
+}
+
+export interface UpdateStaffInput {
+    id: string;
+    name?: string;
+    description?: string;
+    image?: string;
+    role?: string;
+    disabled?: boolean;
+}
+
 
 export type CreateCategoryInput = {
     name: String;
@@ -52,16 +75,16 @@ export interface UpdateCategoryInput {
 }
 
 export interface UpdateProductInput {
-    id: string; 
-    name?: string; 
+    id: string;
+    name?: string;
     description?: string;
     price?: number;
     image?: string;
     priority?: number;
-    categories?: string[]; 
+    categories?: string[];
     disabled?: boolean;
-  }
-  
+}
+
 
 export type User = {
     uid: string;

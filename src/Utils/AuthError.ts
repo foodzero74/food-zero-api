@@ -4,10 +4,8 @@ class AuthError extends Error {
   constructor(message: string) {
     super(message);
 
-    // Set the name to your custom error class name
     this.name = 'AuthError';
 
-    // Capture the stack trace
     Error.captureStackTrace(this, this.constructor);
   }
 

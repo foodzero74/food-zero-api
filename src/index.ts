@@ -5,28 +5,15 @@ import cors from 'cors';
 import { json } from 'body-parser';
 import { connectToDb } from './config/database';
 import getUserFromToken from './middleware/Authentication';
-import {
-  CategoryResolver,
-  CategoryTypeDef,
-  ProductResolver,
-  ProductTypeDef,
-  RootTypeDef,
-  ScheduleResolver,
-  ScheduleTypeDef
-} from './graphql';
+import schema from './graphql/schema';
 
 interface GraphqlContext {
   token?: String;
 }
 const app = express();
 connectToDb();
-const typeDefs = [RootTypeDef, ProductTypeDef, CategoryTypeDef, ScheduleTypeDef];
-const resolvers = [ProductResolver, CategoryResolver, ScheduleResolver];
 
-const server = new ApolloServer<GraphqlContext>({
-  typeDefs,
-  resolvers
-});
+const server = new ApolloServer<GraphqlContext>({ schema });
 
 const startApolloServer = async () => {
   await server.start();

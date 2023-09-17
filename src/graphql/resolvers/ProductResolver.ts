@@ -1,6 +1,6 @@
-import AuthError from '../Utils/AuthError';
-import { CategoryModel, ProductModel } from '../models';
-import { CreateProductInput, ErrorType, GraphQLContext, UpdateProductInput } from '../types';
+import AuthError from '../../utils/AuthError';
+import { CategoryModel, ProductModel } from '../../models';
+import { CreateProductInput, ErrorType, GraphQLContext, UpdateProductInput } from '../../types';
 import mongoose from 'mongoose';
 
 export const ProductResolver = {

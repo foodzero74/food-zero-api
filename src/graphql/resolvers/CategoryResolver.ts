@@ -1,7 +1,7 @@
-import { CategoryModel } from "../models/Category";
-import { CreateCategoryInput, ErrorType, GraphQLContext, UpdateCategoryInput } from '../types';
-import { ProductModel } from '../models';
-import AuthError from "../Utils/AuthError";
+import { CategoryModel } from "../../models/Category";
+import { CreateCategoryInput, ErrorType, GraphQLContext, UpdateCategoryInput } from '../../types';
+import { ProductModel } from '../../models';
+import AuthError from "../../utils/AuthError";
 
 export const CategoryResolver = {
     Query: {
