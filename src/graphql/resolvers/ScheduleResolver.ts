@@ -1,7 +1,7 @@
-import AuthError from '../utils/AuthError';
-import { ScheduleModel } from '../models';
+import AuthError from '../../utils/AuthError';
+import { ScheduleModel } from '../../models';
 
-import { CreateScheduleInput, ErrorType, GraphQLContext, UpdateScheduleInput } from '../types';
+import { CreateScheduleInput, ErrorType, GraphQLContext, UpdateScheduleInput } from '../../types';
 
 export const ScheduleResolver = {
     Query: {
