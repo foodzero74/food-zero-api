@@ -4,3 +4,4 @@ export * from './ScheduleTypeDef';
 export * from './StaffTypeDef';
 export * from './rootTypeDef';
 export * from './FoodSpecs';
+export * from './MeatProcess';
