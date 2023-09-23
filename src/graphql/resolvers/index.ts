@@ -7,3 +7,4 @@ export * from './MeatProcess';
 export * from './Blog';
 export * from './Comment';
 export * from './CommentsHome';
+export * from './Params';

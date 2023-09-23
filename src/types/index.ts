@@ -1,6 +1,8 @@
 import { Request } from 'express';
 
 export enum ErrorType {
+    CREATE_PARAMS = 'You must be logged in to create params.',
+    UPDATE_PARAMS = 'You must be logged in to update params.',
     CREATE_BLOG = 'You must be logged in to create a blog post.',
     UPDATE_BLOG = 'You must be logged in to update a blog post.',
     UPDATE_CATEGORY = 'You must be logged in to update a category.',
@@ -164,5 +166,84 @@ export interface CreateCommentHomeInput {
     comment: string;
     name: string;
     stars: number;
+}
+
+export interface CreateParamInput {
+    backgroundMenu: string;
+    backgroundAbout: string;
+    backgroundContact: string;
+    backgroundBlog: string;
+    backgroundCover: string;
+    address: string;
+    phone: string;
+    email: string;
+    facebook: string;
+    twitter: string;
+    instagram: string;
+    youtube: string;
+    titleCommentsHome: string;
+    homeSection1Title: string;
+    homeSection1Subtitle: string;
+    homeSection1Paragraph1: string;
+    homeSection1Paragraph2: string;
+    homeSection1Images: string[];
+    homeSection1ImagesText1: string;
+    homeSection1ImagesText2: string;
+    homeSection2Title: string;
+    homeSection2Subtitle: string;
+    homeSection2ButtonText: string;
+    homeSection3Title: string;
+    homeSection3Paragraph: string;
+    homeSection3Images: string[];
+    homeSectionMenuTitle: string;
+    homeSectionMenuSubtitle: string;
+    menuSectionTitle: string;
+    menuSectionSubtitle: string;
+    blogSectionTitle: string;
+    blogSectionSubtitle: string;
+    backgroundBlogDetail: string;
+    blogDetailCommentTitle: string;
+    contactSectionTitle: string;
+    contactSectionSubtitle: string;
+}
+
+export interface UpdateParamInput {
+    id: string;
+    backgroundMenu: string;
+    backgroundAbout: string;
+    backgroundContact: string;
+    backgroundBlog: string;
+    backgroundCover: string;
+    address: string;
+    phone: string;
+    email: string;
+    facebook: string;
+    twitter: string;
+    instagram: string;
+    youtube: string;
+    titleCommentsHome: string;
+    homeSection1Title: string;
+    homeSection1Subtitle: string;
+    homeSection1Paragraph1: string;
+    homeSection1Paragraph2: string;
+    homeSection1Images: string[];
+    homeSection1ImagesText1: string;
+    homeSection1ImagesText2: string;
+    homeSection2Title: string;
+    homeSection2Subtitle: string;
+    homeSection2ButtonText: string;
+    homeSection3Title: string;
+    homeSection3Paragraph: string;
+    homeSection3Images: string[];
+    homeSectionMenuTitle: string;
+    homeSectionMenuSubtitle: string;
+    menuSectionTitle: string;
+    menuSectionSubtitle: string;
+    blogSectionTitle: string;
+    blogSectionSubtitle: string;
+    backgroundBlogDetail: string;
+    blogDetailCommentTitle: string;
+    contactSectionTitle: string;
+    contactSectionSubtitle: string;
 }
 
