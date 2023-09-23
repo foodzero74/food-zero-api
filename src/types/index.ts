@@ -12,6 +12,7 @@ export enum ErrorType {
     NOT_FOUND_PRODUCT = 'Product not found.',
     NOT_FOUND_SCHEDULE = 'Schedule not found.',
     NOT_FOUND_FOOD_SPEC = 'Food spec not found.',
+    NOT_FOUND_MEAT_PROCESS = 'Meat process not found.',
     INVALID_TOKEN = 'Invalid token.',
     OVERLAP_SCHEDULE = 'Schedule overlaps with an existing schedule.',
     NOT_FOUND_STAFF = 'Staff not found.',
@@ -22,6 +23,9 @@ export enum ErrorType {
     CREATE_FOOD_SPEC = 'You must be logged in to create a food spec.',
     UPDATE_FOOD_SPEC = 'You must be logged in to update a food spec.',
     DELETE_FOOD_SPEC = 'You must be logged in to delete a food spec.',
+    DELETE_MEAT_PROCESS = 'You must be logged in to delete a meat process.',
+    CREATE_MEAT_PROCESS = 'You must be logged in to create a meat process.',
+    UPDATE_MEAT_PROCESS = 'You must be logged in to update a meat process.',
 }
 
 export interface CreateStaffInput {
@@ -109,5 +113,20 @@ export interface UpdateFoodSpecInput {
     image?: string;
     title?: string;
     content?: string;
+}
+
+export interface CreateMeatProcessInput {
+    image: string;
+    name: string;
+    description: string;
+    order: number;
+}
+
+export interface UpdateMeatProcessInput {
+    id: string;
+    image?: string;
+    name?: string;
+    description?: string;
+    order?: number;
 }
 

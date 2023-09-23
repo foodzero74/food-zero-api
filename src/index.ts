@@ -22,7 +22,7 @@ const startApolloServer = async () => {
     cors<cors.CorsRequest>(),
     json(),
     expressMiddleware(server, {
-      context: async ({ req, res }) => {
+      context: async ({ req }) => {
         const token = req.headers.authorization || '';
         const user = await getUserFromToken(token);
         return { user };

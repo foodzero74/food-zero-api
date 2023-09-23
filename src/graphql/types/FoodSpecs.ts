@@ -21,11 +21,6 @@ export const FoodSpecsTypeDef = gql`
         content: String
     }
 
-    input DeleteFoodSpecInput {
-        id: ID!
-    }
-
-
     extend type Query {
         foodSpecs: [FoodSpec!]
     }

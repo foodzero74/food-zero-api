@@ -1,5 +1,5 @@
 import { FoodSpecsModel } from '../../models';
-import { UpdateStaffInput, GraphQLContext, ErrorType, CreateFoodSpecInput, UpdateFoodSpecInput } from '../../types';
+import { GraphQLContext, ErrorType, CreateFoodSpecInput, UpdateFoodSpecInput } from '../../types';
 import AuthError from '../../Utils/AuthError';
 
 export const FoodSpecsResolver = {
