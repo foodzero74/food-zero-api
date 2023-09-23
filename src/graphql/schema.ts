@@ -1,17 +1,10 @@
+import { CategoryResolver, FoodSpecsResolver, ProductResolver, ScheduleResolver, StaffResolver } from "./resolvers";
+import { CategoryTypeDef, FoodSpecsTypeDef, ProductTypeDef, RootTypeDef, ScheduleTypeDef, StaffTypeDef } from "./types";
 import { makeExecutableSchema } from '@graphql-tools/schema';
-import { ProductTypeDef } from './types/ProductTypeDef';
-import { ProductResolver } from './resolvers/ProductResolver';
-import { CategoryTypeDef } from './types/CategoryTypeDef';
-import { CategoryResolver } from './resolvers/CategoryResolver';
-import { ScheduleTypeDef } from './types/ScheduleTypeDef';
-import { ScheduleResolver } from './resolvers/ScheduleResolver';
-import { StaffTypeDef } from './types/StaffTypeDef';
-import { StaffResolver } from './resolvers/StaffResolver';
-import { RootTypeDef } from './types/rootTypeDef';
 
 const schema = makeExecutableSchema({
-  typeDefs: [ProductTypeDef, CategoryTypeDef, ScheduleTypeDef, StaffTypeDef, RootTypeDef],
-  resolvers: [ProductResolver, CategoryResolver, ScheduleResolver, StaffResolver],
+  typeDefs: [ProductTypeDef, CategoryTypeDef, ScheduleTypeDef, StaffTypeDef, RootTypeDef, FoodSpecsTypeDef],
+  resolvers: [ProductResolver, CategoryResolver, ScheduleResolver, StaffResolver, FoodSpecsResolver],
 });
 
 export default schema;
