@@ -11,6 +11,7 @@ export enum ErrorType {
     NOT_FOUND_CATEGORY = 'Category not found.',
     NOT_FOUND_PRODUCT = 'Product not found.',
     NOT_FOUND_SCHEDULE = 'Schedule not found.',
+    NOT_FOUND_FOOD_SPEC = 'Food spec not found.',
     INVALID_TOKEN = 'Invalid token.',
     OVERLAP_SCHEDULE = 'Schedule overlaps with an existing schedule.',
     NOT_FOUND_STAFF = 'Staff not found.',
@@ -18,6 +19,9 @@ export enum ErrorType {
     UPDATE_STAFF = 'You must be logged in to update a staff member.',
     DELETE_STAFF = 'You must be logged in to delete a staff member.',
     UNDELETE_STAFF = 'You must be logged in to activate a staff member.',
+    CREATE_FOOD_SPEC = 'You must be logged in to create a food spec.',
+    UPDATE_FOOD_SPEC = 'You must be logged in to update a food spec.',
+    DELETE_FOOD_SPEC = 'You must be logged in to delete a food spec.',
 }
 
 export interface CreateStaffInput {
@@ -85,7 +89,6 @@ export interface UpdateProductInput {
     disabled?: boolean;
 }
 
-
 export type User = {
     uid: string;
 };
@@ -94,4 +97,17 @@ export type GraphQLContext = {
     req: Request;
     user?: User;
 };
+
+export interface CreateFoodSpecInput {
+    image: string;
+    title: string;
+    content: string;
+}
+
+export interface UpdateFoodSpecInput {
+    id: string;
+    image?: string;
+    title?: string;
+    content?: string;
+}
 
