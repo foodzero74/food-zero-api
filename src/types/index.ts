@@ -1,6 +1,9 @@
 import { Request } from 'express';
 
 export enum ErrorType {
+    CREATE_COMMENT = 'You must be logged in to create a comment.',
+    CREATE_BLOG = 'You must be logged in to create a blog post.',
+    UPDATE_BLOG = 'You must be logged in to update a blog post.',
     UPDATE_CATEGORY = 'You must be logged in to update a category.',
     CREATE_CATEGORY = 'You must be logged in to create a category.',
     CREATE_PRODUCT = 'You must be logged in to create a product.',
@@ -13,6 +16,7 @@ export enum ErrorType {
     NOT_FOUND_SCHEDULE = 'Schedule not found.',
     NOT_FOUND_FOOD_SPEC = 'Food spec not found.',
     NOT_FOUND_MEAT_PROCESS = 'Meat process not found.',
+    NOT_FOUND_BLOG = 'Blog post not found.',
     INVALID_TOKEN = 'Invalid token.',
     OVERLAP_SCHEDULE = 'Schedule overlaps with an existing schedule.',
     NOT_FOUND_STAFF = 'Staff not found.',
@@ -128,5 +132,38 @@ export interface UpdateMeatProcessInput {
     name?: string;
     description?: string;
     order?: number;
+}
+
+export interface CreateBlogInput {
+    image: string;
+    title: string;
+    content: string;
+    slug: string;
+}
+
+export interface UpdateBlogInput {
+    id: string;
+    image?: string;
+    title?: string;
+    content?: string;
+    slug?: string;
+    disabled?: boolean;
+}
+
+export interface UpdateBlogStateInput {
+    id: string;
+    disabled: boolean;
+}
+
+export interface CreateCommentInput {
+    blogId: string;
+    content: string;
+    name: string;
+}
+
+export interface CreateCommentHomeInput {
+    comment: string;
+    name: string;
+    stars: number;
 }
 

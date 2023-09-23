@@ -1,5 +1,8 @@
 import {
+  BlogResolver,
   CategoryResolver,
+  CommentHomeResolver,
+  CommentResolver,
   FoodSpecsResolver,
   MeatProcessResolver,
   ProductResolver,
@@ -7,7 +10,10 @@ import {
   StaffResolver
 } from "./resolvers";
 import {
+  BlogTypeDef,
   CategoryTypeDef,
+  CommentTypeDef,
+  CommentsHomeTypeDef,
   FoodSpecsTypeDef,
   MeatProcessTypeDef,
   ProductTypeDef,
@@ -18,8 +24,29 @@ import {
 import { makeExecutableSchema } from '@graphql-tools/schema';
 
 const schema = makeExecutableSchema({
-  typeDefs: [ProductTypeDef, CategoryTypeDef, ScheduleTypeDef, StaffTypeDef, RootTypeDef, FoodSpecsTypeDef, MeatProcessTypeDef],
-  resolvers: [ProductResolver, CategoryResolver, ScheduleResolver, StaffResolver, FoodSpecsResolver, MeatProcessResolver],
+  typeDefs: [
+    ProductTypeDef,
+    CategoryTypeDef,
+    ScheduleTypeDef,
+    StaffTypeDef,
+    RootTypeDef,
+    FoodSpecsTypeDef,
+    MeatProcessTypeDef,
+    CommentTypeDef,
+    BlogTypeDef,
+    CommentsHomeTypeDef
+  ],
+  resolvers: [
+    ProductResolver, 
+    CategoryResolver, 
+    ScheduleResolver, 
+    StaffResolver, 
+    FoodSpecsResolver, 
+    MeatProcessResolver, 
+    BlogResolver, 
+    CommentResolver,
+    CommentHomeResolver
+  ],
 });
 
 export default schema;

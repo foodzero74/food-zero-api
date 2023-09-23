@@ -5,3 +5,6 @@ export * from './StaffTypeDef';
 export * from './rootTypeDef';
 export * from './FoodSpecs';
 export * from './MeatProcess';
+export * from './Blog';
+export * from './Comment';
+export * from './CommentsHome';

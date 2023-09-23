@@ -4,3 +4,6 @@ export * from './ScheduleResolver';
 export * from './StaffResolver';
 export * from './FoodSpecs';
 export * from './MeatProcess';
+export * from './Blog';
+export * from './Comment';
+export * from './CommentsHome';
