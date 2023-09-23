@@ -1,7 +1,6 @@
 import { Request } from 'express';
 
 export enum ErrorType {
-    CREATE_COMMENT = 'You must be logged in to create a comment.',
     CREATE_BLOG = 'You must be logged in to create a blog post.',
     UPDATE_BLOG = 'You must be logged in to update a blog post.',
     UPDATE_CATEGORY = 'You must be logged in to update a category.',
