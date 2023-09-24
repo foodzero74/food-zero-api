@@ -213,6 +213,8 @@ export interface CreateParamInput {
     aboutHeaderSectionTitle: string;
     aboutHeaderSectionParagraph: string;
     aboutHeaderSectionImage: string;
+    contactCover1: string;
+    contactCover2: string;
 }
 
 export interface UpdateParamInput {
@@ -258,5 +260,10 @@ export interface UpdateParamInput {
     aboutBannerVideoTitle: string,
     aboutBannerVideoParagraph: string,
     aboutBannerVideoId: string,
+    aboutHeaderSectionTitle: string;
+    aboutHeaderSectionParagraph: string;
+    aboutHeaderSectionImage: string;
+    contactCover1: string;
+    contactCover2: string;
 }
 

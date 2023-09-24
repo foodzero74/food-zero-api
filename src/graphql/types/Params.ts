@@ -47,6 +47,8 @@ export const ParamTypeDef = gql`
     aboutHeaderSectionTitle: String
     aboutHeaderSectionParagraph: String
     aboutHeaderSectionImage: String
+    contactCover1: String
+    contactCover2: String
   }
 
   input CreateParamInput {
@@ -94,6 +96,8 @@ export const ParamTypeDef = gql`
     aboutHeaderSectionTitle: String
     aboutHeaderSectionParagraph: String
     aboutHeaderSectionImage: String
+    contactCover1: String
+    contactCover2: String
   }
 
   input UpdateParamInput {
@@ -142,6 +146,8 @@ export const ParamTypeDef = gql`
     aboutHeaderSectionTitle: String
     aboutHeaderSectionParagraph: String
     aboutHeaderSectionImage: String
+    contactCover1: String
+    contactCover2: String
   }
 
   extend type Query {
