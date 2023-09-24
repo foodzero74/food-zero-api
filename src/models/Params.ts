@@ -37,6 +37,11 @@ const ParamsSchema = new mongoose.Schema({
     blogDetailCommentTitle: String,
     contactSectionTitle: String,
     contactSectionSubtitle: String,
+    aboutSectionTitle: String,
+    aboutSectionParagraph: String,
+    aboutBannerVideoTitle: String,
+    aboutBannerVideoParagraph: String,
+    aboutBannerVideoId: String,
 }, { collection: 'params' });
 
 
