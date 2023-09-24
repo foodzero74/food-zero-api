@@ -133,6 +133,7 @@ export const ParamTypeDef = gql`
     aboutBannerVideoTitle: String
     aboutBannerVideoParagraph: String
     aboutBannerVideoId: String
+    
   }
 
   extend type Query {
