@@ -44,6 +44,9 @@ export const ParamTypeDef = gql`
     aboutBannerVideoTitle: String
     aboutBannerVideoParagraph: String
     aboutBannerVideoId: String
+    aboutHeaderSectionTitle: String
+    aboutHeaderSectionParagraph: String
+    aboutHeaderSectionImage: String
   }
 
   input CreateParamInput {
@@ -88,6 +91,9 @@ export const ParamTypeDef = gql`
     aboutBannerVideoTitle: String
     aboutBannerVideoParagraph: String
     aboutBannerVideoId: String
+    aboutHeaderSectionTitle: String
+    aboutHeaderSectionParagraph: String
+    aboutHeaderSectionImage: String
   }
 
   input UpdateParamInput {
@@ -133,7 +139,9 @@ export const ParamTypeDef = gql`
     aboutBannerVideoTitle: String
     aboutBannerVideoParagraph: String
     aboutBannerVideoId: String
-
+    aboutHeaderSectionTitle: String
+    aboutHeaderSectionParagraph: String
+    aboutHeaderSectionImage: String
   }
 
   extend type Query {

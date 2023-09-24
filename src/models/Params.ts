@@ -42,6 +42,9 @@ const ParamsSchema = new mongoose.Schema({
     aboutBannerVideoTitle: String,
     aboutBannerVideoParagraph: String,
     aboutBannerVideoId: String,
+    aboutHeaderSectionTitle: String,
+    aboutHeaderSectionParagraph: String,
+    aboutHeaderSectionImage: String,
 }, { collection: 'params' });
 
 
