@@ -121,8 +121,8 @@ export const ParamTypeDef = gql`
   }
 
   extend type Query {
-    getParams(): Param!
-   }
+    getParams: Param
+  }
 
   extend type Mutation {
     createParam(input: CreateParamInput!): Param!

@@ -1,10 +1,10 @@
 import { CreateParamInput, GraphQLContext, UpdateParamInput } from '../../types';
-import { CommentsHomeModel, ParamsModel } from '../../models';
+import { ParamsModel } from '../../models';
 
 export const ParamsResolver = {
     Query: {
         getParams: async () => {
-            return await CommentsHomeModel.findOne();
+            return await ParamsModel.findOne();
         },
     },
     Mutation: {
