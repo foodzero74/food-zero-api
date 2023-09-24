@@ -39,11 +39,11 @@ export const ParamTypeDef = gql`
     blogDetailCommentTitle: String
     contactSectionTitle: String
     contactSectionSubtitle: String
-    aboutSectionTitle: String,
-    aboutSectionParagraph: String,
-    aboutBannerVideoTitle: String,
-    aboutBannerVideoParagraph: String,
-    aboutBannerVideoId: String,
+    aboutSectionTitle: String
+    aboutSectionParagraph: String
+    aboutBannerVideoTitle: String
+    aboutBannerVideoParagraph: String
+    aboutBannerVideoId: String
   }
 
   input CreateParamInput {
@@ -83,11 +83,11 @@ export const ParamTypeDef = gql`
     blogDetailCommentTitle: String
     contactSectionTitle: String
     contactSectionSubtitle: String
-    aboutSectionTitle: String,
-    aboutSectionParagraph: String,
-    aboutBannerVideoTitle: String,
-    aboutBannerVideoParagraph: String,
-    aboutBannerVideoId: String,
+    aboutSectionTitle: String
+    aboutSectionParagraph: String
+    aboutBannerVideoTitle: String
+    aboutBannerVideoParagraph: String
+    aboutBannerVideoId: String
   }
 
   input UpdateParamInput {
@@ -133,7 +133,7 @@ export const ParamTypeDef = gql`
     aboutBannerVideoTitle: String
     aboutBannerVideoParagraph: String
     aboutBannerVideoId: String
-    
+
   }
 
   extend type Query {
