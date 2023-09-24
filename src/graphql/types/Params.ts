@@ -129,10 +129,10 @@ export const ParamTypeDef = gql`
     contactSectionTitle: String
     contactSectionSubtitle: String
     aboutSectionTitle: String,
-    aboutSectionParagraph: String,
-    aboutBannerVideoTitle: String,
-    aboutBannerVideoParagraph: String,
-    aboutBannerVideoId: String,
+    aboutSectionParagraph: String
+    aboutBannerVideoTitle: String
+    aboutBannerVideoParagraph: String
+    aboutBannerVideoId: String
   }
 
   extend type Query {

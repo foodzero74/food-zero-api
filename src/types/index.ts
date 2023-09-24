@@ -205,11 +205,11 @@ export interface CreateParamInput {
     blogDetailCommentTitle: string;
     contactSectionTitle: string;
     contactSectionSubtitle: string;
-    aboutSectionTitle: string,
-    aboutSectionParagraph: string,
-    aboutBannerVideoTitle: string,
-    aboutBannerVideoParagraph: string,
-    aboutBannerVideoId: string,
+    aboutSectionTitle: string;
+    aboutSectionParagraph: string;
+    aboutBannerVideoTitle: string;
+    aboutBannerVideoParagraph: string;
+    aboutBannerVideoId: string;
 }
 
 export interface UpdateParamInput {
