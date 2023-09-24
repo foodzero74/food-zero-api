@@ -45,6 +45,8 @@ const ParamsSchema = new mongoose.Schema({
     aboutHeaderSectionTitle: String,
     aboutHeaderSectionParagraph: String,
     aboutHeaderSectionImage: String,
+    contactCover1: String,
+    contactCover2: String,
 }, { collection: 'params' });
 
 
