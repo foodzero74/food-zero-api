@@ -210,6 +210,9 @@ export interface CreateParamInput {
     aboutBannerVideoTitle: string;
     aboutBannerVideoParagraph: string;
     aboutBannerVideoId: string;
+    aboutHeaderSectionTitle: string;
+    aboutHeaderSectionParagraph: string;
+    aboutHeaderSectionImage: string;
 }
 
 export interface UpdateParamInput {
