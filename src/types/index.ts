@@ -186,7 +186,6 @@ export interface CreateParamInput {
     homeSection1Subtitle: string;
     homeSection1Paragraph1: string;
     homeSection1Paragraph2: string;
-    homeSection1Images: string[];
     homeSection1ImagesText1: string;
     homeSection1ImagesText2: string;
     homeSection2Title: string;
@@ -194,7 +193,11 @@ export interface CreateParamInput {
     homeSection2ButtonText: string;
     homeSection3Title: string;
     homeSection3Paragraph: string;
-    homeSection3Images: string[];
+    homeSection3Image1: string,
+    homeSection3Image2: string,
+    homeSection3Image3: string,
+    homeSection1Image1: string,
+    homeSection1Image2: string,
     homeSectionMenuTitle: string;
     homeSectionMenuSubtitle: string;
     menuSectionTitle: string;
@@ -236,7 +239,11 @@ export interface UpdateParamInput {
     homeSection1Subtitle: string;
     homeSection1Paragraph1: string;
     homeSection1Paragraph2: string;
-    homeSection1Images: string[];
+    homeSection3Image1: string,
+    homeSection3Image2: string,
+    homeSection3Image3: string,
+    homeSection1Image1: string,
+    homeSection1Image2: string,
     homeSection1ImagesText1: string;
     homeSection1ImagesText2: string;
     homeSection2Title: string;
@@ -244,7 +251,6 @@ export interface UpdateParamInput {
     homeSection2ButtonText: string;
     homeSection3Title: string;
     homeSection3Paragraph: string;
-    homeSection3Images: string[];
     homeSectionMenuTitle: string;
     homeSectionMenuSubtitle: string;
     menuSectionTitle: string;
