@@ -20,7 +20,11 @@ export const ParamTypeDef = gql`
     homeSection1Subtitle: String
     homeSection1Paragraph1: String
     homeSection1Paragraph2: String
-    homeSection1Images: [String]
+    homeSection3Image1: String
+    homeSection3Image2: String
+    homeSection3Image3: String
+    homeSection1Image1: String
+    homeSection1Image2: String
     homeSection1ImagesText1: String
     homeSection1ImagesText2: String
     homeSection2Title: String
@@ -28,7 +32,6 @@ export const ParamTypeDef = gql`
     homeSection2ButtonText: String
     homeSection3Title: String
     homeSection3Paragraph: String
-    homeSection3Images: [String]
     homeSectionMenuTitle: String
     homeSectionMenuSubtitle: String
     menuSectionTitle: String
@@ -69,7 +72,11 @@ export const ParamTypeDef = gql`
     homeSection1Subtitle: String
     homeSection1Paragraph1: String
     homeSection1Paragraph2: String
-    homeSection1Images: [String]
+    homeSection3Image1: String
+    homeSection3Image2: String
+    homeSection3Image3: String
+    homeSection1Image1: String
+    homeSection1Image2: String
     homeSection1ImagesText1: String
     homeSection1ImagesText2: String
     homeSection2Title: String
@@ -77,7 +84,6 @@ export const ParamTypeDef = gql`
     homeSection2ButtonText: String
     homeSection3Title: String
     homeSection3Paragraph: String
-    homeSection3Images: [String]
     homeSectionMenuTitle: String
     homeSectionMenuSubtitle: String
     menuSectionTitle: String
@@ -119,7 +125,11 @@ export const ParamTypeDef = gql`
     homeSection1Subtitle: String
     homeSection1Paragraph1: String
     homeSection1Paragraph2: String
-    homeSection1Images: [String]
+    homeSection3Image1: String
+    homeSection3Image2: String
+    homeSection3Image3: String
+    homeSection1Image1: String
+    homeSection1Image2: String
     homeSection1ImagesText1: String
     homeSection1ImagesText2: String
     homeSection2Title: String
@@ -127,7 +137,6 @@ export const ParamTypeDef = gql`
     homeSection2ButtonText: String
     homeSection3Title: String
     homeSection3Paragraph: String
-    homeSection3Images: [String]
     homeSectionMenuTitle: String
     homeSectionMenuSubtitle: String
     menuSectionTitle: String
