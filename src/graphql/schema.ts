@@ -8,6 +8,7 @@ import {
   MeatProcessResolver,
   ParamsResolver,
   ProductResolver,
+  ReservationResolver,
   ScheduleResolver,
   StaffResolver
 } from "./resolvers";
@@ -21,6 +22,7 @@ import {
   MeatProcessTypeDef,
   ParamTypeDef,
   ProductTypeDef,
+  ReservationsTypeDef,
   RootTypeDef,
   ScheduleTypeDef,
   StaffTypeDef
@@ -40,7 +42,8 @@ const schema = makeExecutableSchema({
     BlogTypeDef,
     CommentsHomeTypeDef,
     ParamTypeDef,
-    ContactsTypeDef
+    ContactsTypeDef,
+    ReservationsTypeDef
   ],
   resolvers: [
     ProductResolver,
@@ -53,7 +56,8 @@ const schema = makeExecutableSchema({
     CommentResolver,
     CommentHomeResolver,
     ParamsResolver,
-    ContactResolver
+    ContactResolver,
+    ReservationResolver
   ],
 });
 
