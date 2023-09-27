@@ -8,3 +8,4 @@ export * from './Blog';
 export * from './Comment';
 export * from './CommentsHome';
 export * from './Params';
+export * from './Contacts';

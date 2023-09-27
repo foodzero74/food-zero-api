@@ -3,6 +3,7 @@ import {
   CategoryResolver,
   CommentHomeResolver,
   CommentResolver,
+  ContactResolver,
   FoodSpecsResolver,
   MeatProcessResolver,
   ParamsResolver,
@@ -15,6 +16,7 @@ import {
   CategoryTypeDef,
   CommentTypeDef,
   CommentsHomeTypeDef,
+  ContactsTypeDef,
   FoodSpecsTypeDef,
   MeatProcessTypeDef,
   ParamTypeDef,
@@ -37,19 +39,21 @@ const schema = makeExecutableSchema({
     CommentTypeDef,
     BlogTypeDef,
     CommentsHomeTypeDef,
-    ParamTypeDef
+    ParamTypeDef,
+    ContactsTypeDef
   ],
   resolvers: [
-    ProductResolver, 
-    CategoryResolver, 
-    ScheduleResolver, 
-    StaffResolver, 
-    FoodSpecsResolver, 
-    MeatProcessResolver, 
-    BlogResolver, 
+    ProductResolver,
+    CategoryResolver,
+    ScheduleResolver,
+    StaffResolver,
+    FoodSpecsResolver,
+    MeatProcessResolver,
+    BlogResolver,
     CommentResolver,
     CommentHomeResolver,
-    ParamsResolver
+    ParamsResolver,
+    ContactResolver
   ],
 });
 
