@@ -168,6 +168,10 @@ export interface CreateCommentHomeInput {
     stars: number;
 }
 
+export interface CreateContactInput {
+    email: string;
+}
+
 export interface CreateParamInput {
     backgroundMenu: string;
     backgroundAbout: string;
