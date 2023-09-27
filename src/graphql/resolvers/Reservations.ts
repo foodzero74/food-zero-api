@@ -25,8 +25,13 @@ export const ReservationResolver = {
             } = input;
 
             // Check if the date is today or in the future
-            const reservationDate = moment(`${date} ${hour}`, 'YYYY-MM-DD hh:mm A');
+            const reservationDate = moment(`${date} ${hour}`, 'YYYY-MM-DD HH:mm');
             const now = moment();
+
+            if (!reservationDate.isValid()) {
+                throw new Error('Invalid date or time format');
+            }
+            
             if (reservationDate.isBefore(now)) {
                 throw new Error('Reservation date and time must be in the future');
             }
