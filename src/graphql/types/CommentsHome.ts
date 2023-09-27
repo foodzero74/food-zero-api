@@ -21,5 +21,6 @@ export const CommentsHomeTypeDef = gql`
 
   extend type Mutation {
     createCommentHome(input: CreateCommentHomeInput!): CommentHome!
+    deleteCommentHome(id: ID!): CommentHome
   }
 `;
