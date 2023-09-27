@@ -1,5 +1,6 @@
 import { CreateContactInput, GraphQLContext } from '../../types';
 import { ContactsModel } from '../../models';
+import mongoose from 'mongoose';
 
 export const ContactResolver = {
     Query: {
@@ -13,8 +14,17 @@ export const ContactResolver = {
             { input }: { input: CreateContactInput },
             __: GraphQLContext
         ) => {
-            const contact = new ContactsModel(input);
-            return await contact.save();
+            try {
+                const contact = new ContactsModel(input);
+                return await contact.save();
+            } catch (error) {
+                let e = error as mongoose.Error;
+                if (e.name === "MongoServerError") {
+                    const email = e.message.match(/email: "([^"]*)"/)?.[1];
+                    throw new Error(`The email ${email} is already registered.`);
+                }
+                throw error;
+            }
         },
     }
 };
