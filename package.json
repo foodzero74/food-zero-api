@@ -20,6 +20,7 @@
     "firebase-admin": "^11.10.1",
     "graphql": "^16.8.0",
     "graphql-tag": "^2.12.6",
+    "moment": "^2.29.4",
     "mongoose": "^7.5.0"
   },
   "devDependencies": {

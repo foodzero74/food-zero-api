@@ -10,6 +10,7 @@ export enum ErrorType {
     CREATE_PRODUCT = 'You must be logged in to create a product.',
     UPDATE_PRODUCT = 'You must be logged in to update a product.',
     DELETE_SCHEDULE = 'You must be logged in to delete an schedule.',
+    DELETE_RESERVATION = 'You must be logged in to delete a reservation.',
     CREATE_SCHEDULE = 'You must be logged in to create an schedule.',
     UPDATE_SCHEDULE = 'You must be logged in to update an schedule.',
     NOT_FOUND_CATEGORY = 'Category not found.',
@@ -17,6 +18,7 @@ export enum ErrorType {
     NOT_FOUND_SCHEDULE = 'Schedule not found.',
     NOT_FOUND_FOOD_SPEC = 'Food spec not found.',
     NOT_FOUND_MEAT_PROCESS = 'Meat process not found.',
+    NOT_FOUND_RESERVATION = 'Reservation not found.',
     NOT_FOUND_BLOG = 'Blog post not found.',
     INVALID_TOKEN = 'Invalid token.',
     OVERLAP_SCHEDULE = 'Schedule overlaps with an existing schedule.',
@@ -277,3 +279,14 @@ export interface UpdateParamInput {
     contactCover2: string;
 }
 
+
+export interface CreateReservationInput {
+    firstName: string;
+    surname: string;
+    email: string;
+    phone: string;
+    date: string;
+    hour: string;
+    state: string;
+    numberOfPeople: number;
+}
