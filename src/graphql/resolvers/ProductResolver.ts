@@ -38,7 +38,7 @@ export const ProductResolver = {
         }
       }
 
-      return savedProduct;
+      return savedProduct.populate('categories');
     },
     updateProduct: async (
       _: any,
@@ -75,7 +75,7 @@ export const ProductResolver = {
       }
       if (typeof input.disabled !== 'undefined') product.disabled = input.disabled;
 
-      return await product.save();
+      return (await product.save()).populate('categories');
     }
   }
 };
