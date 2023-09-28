@@ -40,7 +40,11 @@ export const MeatProcessResolver = {
                 AuthError.throw(ErrorType.UPDATE_MEAT_PROCESS);
             }
 
-            return await MeatProcessModel.findByIdAndUpdate(input.id, input, { new: true });
+            return await MeatProcessModel.findOneAndUpdate(
+                { _id: input.id },
+                input,
+                { new: true }
+            );
         },
         deleteMeatProcess: async (
             _: any,
