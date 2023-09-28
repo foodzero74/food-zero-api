@@ -31,7 +31,7 @@ export const MeatProcessTypeDef = gql`
 
     extend type Mutation {
         createMeatProcess(input: CreateMeatProcessInput!): MeatProcess!
-        updateMeatProcess(input: UpdateMeatProcessInput!): MeatProcess!
+        updateMeatProcess(input: UpdateMeatProcessInput!): MeatProcess
         deleteMeatProcess(id: ID!): MeatProcess!
     }
 `;
